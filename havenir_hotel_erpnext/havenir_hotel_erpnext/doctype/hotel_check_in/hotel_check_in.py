@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2020, Havenir and contributors
+# Copyright (c) 2024, Glistercp and Contributors
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
@@ -34,6 +34,7 @@ class HotelCheckIn(Document):
             room_doc.db_set('check_in_id', None)
             room_doc.db_set('room_status', 'Available')
 
+    @frappe.whitelist()
     def get_room_price(self, room):
         room_price = frappe.get_value('Rooms', {
             'room_number': room
